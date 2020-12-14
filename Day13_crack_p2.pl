@@ -16,6 +16,8 @@ while(<IN>){
 	}else{
 		$residual{$line[1]}=$line[1]-($line[0]%$line[1]);
 	}
+	##The actual residual is not the difference between the goal number and the lineID/row number, which I thought it was.
+	##So the code above kind of help with the calculation to convert the ID/row number to the modulo needed during the search.
 	$cmp=$cmp*$line[1];
 }
 print "$cmp\n";
@@ -29,6 +31,7 @@ foreach my $p (sort {$a<=>$b} keys %residual){
 my $numberS=$acc_sum%$cmp;
 print "$acc_sum,$numberS\n";
 
+## Native search for the Modular multiplicative inverse
 sub rev_mod{
 	(my $revpn,my $pn)=@_;
     if($revpn % $pn ==1){
