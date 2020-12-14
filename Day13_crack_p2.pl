@@ -30,6 +30,7 @@ foreach my $p (sort {$a<=>$b} keys %residual){
 }
 my $numberS=$acc_sum%$cmp;
 print "$acc_sum,$numberS\n";
+## The script outputs two numbers in the last line: the first is the accumulative sum, and the second is the goal number.
 
 ## Native search for the Modular multiplicative inverse
 sub rev_mod{
